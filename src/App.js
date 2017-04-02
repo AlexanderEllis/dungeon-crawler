@@ -3,34 +3,6 @@ import update from 'react-addons-update';
 import './App.css';
 
 /*
-TODO
-
-DONE Create map
-DONE Display map
-DONE Initialize states (health, damage, enemy info)
-Player movement
-  Can player move in that direction?
-    DONE Yes: move
-    No: why?
-      Enemy: Fight that guy
-      Item: Pick it up
-      Wall: Do nothing
-      
-What's visible?
-
-Things to keep track of:
-  Map
-    because it changes as the player moves, fights enemies, picks things up
-  Enemy info: health
-    Because the enemy health changes over time
-  Player info: health, attack, position
-    Because health and attack changes over time, and we can just look up position instead of trying to find it.
-      Position: indexed from top left like Y,X.  We'll have map be array of rows, which means first value is the
-      Y (the 0 indexed row) and the second value is the X (the 0 indexed column)
-
-Things that can be constants:
-  Item mapping
-
 Mapping:
   0: wall
   1: space
@@ -44,10 +16,6 @@ Mapping:
   9: potion
   10: better sword
 
-
-Components:
-App
-  render each tile on board 
 */
 
 var MAP = [
@@ -148,6 +116,7 @@ class App extends Component {
     };
     document.addEventListener('keydown', (e) => { // Arrow function so this refers to App
       if (keyMapping[e.key]) {
+        e.preventDefault();
         this.handleInput(keyMapping[e.key]);
       }
     });
