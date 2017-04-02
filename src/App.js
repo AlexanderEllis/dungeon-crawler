@@ -369,7 +369,8 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Welcome to React</h2>
+          <h2>React Dungeon Crawler</h2>
+          <h3>Good luck!</h3>
         </div>
         <p className="App-intro">
           Health: {this.state.playerHealth} Attack: {this.state.playerAttack} Level: {this.state.playerLevel}
