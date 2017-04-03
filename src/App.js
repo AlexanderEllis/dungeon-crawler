@@ -158,7 +158,7 @@ class App extends Component {
     
     let itemsToPlace = [3,3,3,3,4,5,6,7,8,9,9,9,9,9,9,9,9,10];
     
-    while (itemsToPlace.length != 0) {
+    while (itemsToPlace.length !== 0) {
       let y = Math.floor(Math.random() * initialState.map.length);
       let x = Math.floor(Math.random() * initialState.map[0].length);
       if (initialState.map[y][x] === 1) {
@@ -333,7 +333,9 @@ class App extends Component {
       map: MAP,
       playerPosition: [45, 2],
       playerHealth: 100,
+      playerExperience: 0,
       playerAttack: 10,
+      playerLevel: 1,
       enemies: {
         3: {
           health: 20,
@@ -356,10 +358,11 @@ class App extends Component {
           attack: 40
         },
         8: {
-          health: 120,
+          health: 240,
           attack: 50
         }
-      }
+      },
+      startTime: new Date().getTime()
     }
     
     this.setState(initialState);
